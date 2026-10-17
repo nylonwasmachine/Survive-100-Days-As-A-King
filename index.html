@@ -1,1 +1,67 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101710">
+  <title>Survive 100 Days as a King</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="./src/config.js"></script>
+  <script defer src="./src/auth.js"></script>
+  <script defer src="./src/app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <p class="eyebrow">YOUR KINGDOM AWAITS</p>
+      <h1>👑 Survive 100 Days<br>as a King</h1>
+      <p class="muted">
+        Maak je account aan. Bouw je koninkrijk.
+        Overleef 100 dagen.
+      </p>
+
+      <div id="authView">
+        <form id="authForm">
+          <label for="displayName">Spelersnaam</label>
+          <input id="displayName" maxlength="20"
+            autocomplete="nickname" placeholder="Je koninklijke naam">
+
+          <label for="email">E-mailadres</label>
+          <input id="email" type="email" required
+            autocomplete="email" placeholder="jij@example.com">
+
+          <label for="password">Wachtwoord</label>
+          <input id="password" type="password" required
+            minlength="8" autocomplete="current-password"
+            placeholder="Minimaal 8 tekens">
+
+          <button id="submitButton" type="submit">
+            Account aanmaken
+          </button>
+        </form>
+
+        <button id="modeButton" class="secondary" type="button">
+          Heb je al een account? Inloggen
+        </button>
+      </div>
+
+      <div id="accountView" hidden>
+        <p class="success">✓ Je bent ingelogd</p>
+        <p>Welkom, <strong id="playerName"></strong>!</p>
+        <p class="muted" id="playerEmail"></p>
+        <p class="muted">
+          Je account werkt. De 3D-lobby komt in de volgende fase.
+        </p>
+        <button id="logoutButton" class="secondary" type="button">
+          Uitloggen
+        </button>
+      </div>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <footer>EARLY ACCESS · BUILD YOUR LEGACY</footer>
+  </main>
+</body>
+</html>
